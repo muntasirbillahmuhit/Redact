@@ -1,0 +1,4 @@
+{
+  "name": "Redact",
+  "description": "Strip the hidden paper trail from AI-generated images: prompts, EXIF, XMP and content credentials. Entirely in-browser image metadata remover and resizer."
+}
