@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-peach: #EDD4CF;
+    --red-primary: #CA4639;
+    --red-icon: #DF3D30;
+    --pink-card: #F9E4E3;
+    --text-primary: #121212;
+    --text-muted: #8A8A8A;
+    --glass-card: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.60);
+
+    /* Bottom Navigation & Layout sync variables */
+    --nav-height: 80px;
+    --nav-bottom: 16px;
+    --content-bottom-padding: calc(var(--nav-height) + var(--nav-bottom) + 24px + env(safe-area-inset-bottom, 0px));
+  }
+
+  html, body, #root {
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.content-scroll-container {
+  padding-bottom: var(--content-bottom-padding);
+}
+
+/* Custom glassmorphism utilities matching the exact liquid glass aesthetics */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 24px -4px rgba(160, 80, 70, 0.05),
+              0 2px 6px -1px rgba(0, 0, 0, 0.02),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.liquid-glass-dark {
+  background: rgba(34, 25, 26, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.4),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.liquid-nav-glass {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 16px 36px -6px rgba(180, 80, 70, 0.12),
+              0 4px 12px -2px rgba(0, 0, 0, 0.03),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.95);
+}
+
+.liquid-nav-glass-dark {
+  background: rgba(28, 20, 22, 0.85);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px -6px rgba(0, 0, 0, 0.5),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* Hide scrollbars for clean mobile feel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
